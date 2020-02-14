@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Currency Calculator</string>
+    <string-array name="currency_names">
+        <item>Mex Peso</item>
+        <item>US Dollar</item>
+        <item>Can Dollar</item>
+        <item>Jap Yen</item>
+    </string-array>
 </resources>
