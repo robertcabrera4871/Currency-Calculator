@@ -30,8 +30,12 @@ class MainActivity : AppCompatActivity() {
                 if(currencyInTextView.text.isNotEmpty() && !currencyInTextView.text.startsWith('.')) {
                     currencyCalc.fromCurrencyAmount = currencyInTextView.text.toString().toDouble()
                     currencyOutTextView.text = currencyCalc.calculateToCurrency()
+                } else{
+                    Toast.makeText(this@MainActivity,"Make sure input is not empty, and does not start with . ",Toast.LENGTH_SHORT).show()
                 }
+
             }
+
 
         })
     }
@@ -55,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                         currencyCalc.toCurrencyType = toCurrencySpinner.getItemAtPosition(position).toString()
                     }
                     currencyOutTextView.text = currencyCalc.calculateToCurrency()
+
                 }
 
             }
