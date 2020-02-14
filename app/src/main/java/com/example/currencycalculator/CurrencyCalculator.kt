@@ -17,10 +17,10 @@ class CurrencyCalculator {
     fun calculateToCurrency() : String{
         if( fromCurrencyType!= "" && toCurrencyType != ""){
             when(fromCurrencyType){
-                "Mex Peso" -> return fromMexCalc().toString().plus(" Pesos")
-                "Can Dollar" -> return fromCanCalc().toString().plus(" Can")
-                "Jap Yen" -> return fromJapCalc().toString().plus(" Yen")
-                "US Dollar" -> return fromUsCalc().toString().plus(" US")
+                "Mex Peso" -> return fromMexCalc().toString().plus(" ").plus(toCurrencyType)
+                "Can Dollar" -> return fromCanCalc().toString().plus(" ").plus(toCurrencyType)
+                "Jap Yen" -> return fromJapCalc().toString().plus(" ").plus(toCurrencyType)
+                "US Dollar" -> return fromUsCalc().toString().plus(" ").plus(toCurrencyType)
             }
         }
         return ""

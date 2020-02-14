@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,9 +27,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(currencyInTextView.text.isNotEmpty() && !currencyInTextView.text.startsWith('.')) {
                     currencyCalc.fromCurrencyAmount = currencyInTextView.text.toString().toDouble()
                     currencyOutTextView.text = currencyCalc.calculateToCurrency()
-
+                }
             }
 
         })
