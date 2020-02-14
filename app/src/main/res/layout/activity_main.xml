@@ -7,40 +7,43 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/toTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Currency Type"
+        app:layout_constraintBottom_toBottomOf="@+id/toCurrencySpinner"
+        app:layout_constraintEnd_toEndOf="@+id/fromTypeLabel" />
+
+    <TextView
         android:id="@+id/currencyOutTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="118dp"
-        android:layout_marginLeft="118dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginRight="118dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginTop="278dp"
+        android:layout_marginBottom="278dp"
         android:hint="Conversion Here"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/currencyInTextView"
+        app:layout_constraintStart_toStartOf="@+id/currencyInTextView"
+        app:layout_constraintTop_toBottomOf="@+id/currencyInTextView" />
 
     <Spinner
         android:id="@+id/toCurrencySpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginRight="90dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currencyInTextView" />
+        android:layout_marginTop="101dp"
+        android:layout_marginBottom="101dp"
+        app:layout_constraintBottom_toTopOf="@+id/currencyOutTextView"
+        app:layout_constraintStart_toStartOf="@+id/fromCurrencySpinner"
+        app:layout_constraintTop_toTopOf="@+id/fromTypeLabel" />
 
-    <TextView
+    <EditText
         android:id="@+id/currencyInTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
         android:layout_marginTop="90dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginRight="57dp"
         android:hint="Enter your Currency Amount"
+        android:inputType="numberDecimal"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,10 +53,21 @@
         android:id="@+id/fromCurrencySpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginRight="99dp"
+        app:layout_constraintEnd_toStartOf="@+id/toTypeLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currencyInTextView" />
+
+    <TextView
+        android:id="@+id/fromTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Currency Type"
+        app:layout_constraintBottom_toBottomOf="@+id/fromCurrencySpinner"
+        app:layout_constraintEnd_toEndOf="@+id/currencyInTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
